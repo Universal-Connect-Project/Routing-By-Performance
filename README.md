@@ -8,7 +8,8 @@ Change the "userId" and "accessKey" in the pre-request script tabs to the userId
 
 ### Step 3: Call /api/preference?partner=client_name to put the preference to the API.
 
-![performance_preference](https://github.com/Universal-Connect-Project/Routing-By-Performance/assets/31253738/72ab4f1f-39f1-42b4-b8af-db0b3bedbc1f)
+
+![performance_preference](https://github.com/Universal-Connect-Project/Routing-By-Performance/assets/31253738/0d02566b-aab6-4bea-829e-3aea6bc7341c)
 
 
 
@@ -19,4 +20,4 @@ For instance, the universal id for "PNC Bank" is 13793b9f-2ebf-4f31-815e-7dfe38e
 
 
 
-![performance_autorouting](https://github.com/Universal-Connect-Project/Routing-By-Performance/assets/31253738/b2703d0f-5ab8-43c4-bc22-83979f1dba86)
+![performance_autorouting](https://github.com/Universal-Connect-Project/Routing-By-Performance/assets/31253738/3f1ecdec-258c-427e-863c-1572a1943491)
