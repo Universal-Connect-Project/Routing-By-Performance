@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "https://search.sophtron.com/api/preference",
+			"name": "https://search.universalconnectproject.org/api/preference",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -16,8 +16,6 @@
 						"exec": [
 							"const userId = '';\r",
 							"const accessKey = '';\r",
-							"const url = `${pm.request.url}`;\r",
-							"const httpMethod = pm.request.method;\r",
 							"function buildAuthCode() {\r",
 							"const authString = 'basic ' + Buffer.from(`${userId}:${accessKey}`).toString('base64')\r",
 							"return authString;\r",
@@ -36,7 +34,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://search.sophtron.com/api/preference",
+					"raw": "https://search.universalconnectproject.org/api/preference",
 					"protocol": "https",
 					"host": [
 						"search",
@@ -46,19 +44,13 @@
 					"path": [
 						"api",
 						"preference"
-					],
-					"query": [
-						{
-							"key": "partner",
-							"value": "money"
-						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "https://search.sophtron.com/api/preference",
+			"name": "https://search.universalconnectproject.org/api/preference",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -66,8 +58,6 @@
 						"exec": [
 							"const userId = '';\r",
 							"const accessKey = '';\r",
-							"const url = `${pm.request.url}`;\r",
-							"const httpMethod = pm.request.method;\r",
 							"function buildAuthCode() {\r",
 							"const authString = 'basic ' + Buffer.from(`${userId}:${accessKey}`).toString('base64')\r",
 							"return authString;\r",
@@ -102,7 +92,7 @@
 					"raw": "{\r\n  \"defaultProvider\": \"sophtron\",\r\n\r\n  \"providerMapping\" : {\r\n    \"chase\": { \"name\": \"Chase Bank\", \"provider\": \"mx\" },\r\n    \"citibank\": { \"name\": \"Citibank\", \"provider\": \"sophtron\" },\r\n    \"wells_fargo\": { \"name\": \"Wells Fargo\", \"provider\": \"sophtron\" },\r\n    \"td_bank\": { \"name\": \"TD Bank (US)\", \"provider\": \"sophtron\" }\r\n},\r\n\r\n  \"hiddenBanks\" : [],\r\n\r\n  \"weights_conf\": {\r\n    \"success_rate\": {\r\n      \"use_field\": \"avg\",\r\n      \"ration\": 0.4,\r\n      \"buckets\": [\r\n        {\r\n          \"from\": 0,\r\n          \"to\": 30,\r\n          \"weight\": 10\r\n        },\r\n        {\r\n          \"from\": 30,\r\n          \"to\": 60,\r\n          \"weight\": 20\r\n        },\r\n        {\r\n          \"from\": 60,\r\n          \"to\": 90,\r\n          \"weight\": 35\r\n        },\r\n        {\r\n          \"from\": 90,\r\n          \"to\": 101,\r\n          \"weight\": 50\r\n        }\r\n      ]\r\n    },\r\n    \"time_cost\": {\r\n      \"use_field\": \"avg\",\r\n      \"ration\": 0.6,\r\n      \"buckets\":[\r\n        {\r\n          \"from\": 0,\r\n          \"to\": 30,\r\n          \"weight\": 50\r\n        },\r\n        {\r\n          \"from\": 30,\r\n          \"to\": 50,\r\n          \"weight\": 40\r\n        },\r\n        {\r\n          \"from\": 50,\r\n          \"to\": 60,\r\n          \"weight\": 30\r\n        },\r\n        {\r\n          \"from\": 60,\r\n          \"to\": 70,\r\n          \"weight\": 20\r\n        },\r\n        {\r\n          \"from\": 70,\r\n          \"to\": 75,\r\n          \"weight\": 15\r\n        },\r\n        {\r\n          \"from\": 75,\r\n          \"to\": 90,\r\n          \"weight\": 10\r\n        }\r\n      ]\r\n    }\r\n  },\r\n\r\n  \"defaultBanks\" : [\r\n    {\r\n      \"id\": \"citibank\",\r\n      \"name\": \"Citibank\",\r\n      \"url\": \"https://www.citi.com/\",\r\n      \"logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/INS-80feb7d4-f8ce-fa5e-cc71-bb22d7492fda_100x100.png\"\r\n    },\r\n    {\r\n      \"id\": \"chase\",\r\n      \"name\": \"Chase Bank\",\r\n      \"url\": \"https://www.chase.com/\",\r\n      \"logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/INS-78c7b591-6512-9c17-b092-1cddbd3c85ba_100x100.png\"\r\n    },\r\n    {\r\n      \"id\": \"wells_fargo\",\r\n      \"name\": \"Wells Fargo\",\r\n      \"url\": \"https://www.wellsfargo.com\",\r\n      \"logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/INS-6073ad01-da9e-f6ba-dfdf-5f1500d8e867_100x100.png\"\r\n    },\r\n    {\r\n      \"id\": \"bank_of_america\",\r\n      \"name\": \"Bank of America\",\r\n      \"url\": \"https://www.bankofamerica.com\",\r\n      \"logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/INS-93b80c01-e275-2587-a0df-6c0995e283ef_100x100.png\"\r\n    },\r\n    {\r\n      \"id\": \"227d9de3-7c18-4781-97a0-ce2ecefb1b7a\",\r\n      \"name\": \"Barclays\",\r\n      \"url\": \"https://www.securebanking.barclaysus.com/login.do\",\r\n      \"logo_url\": \"https://sophtron.com/images/banklogos/barclays.png\"\r\n    },\r\n    {\r\n      \"id\": \"7da0e182-a2f3-41f1-84e2-4b6f5b8112e5\",\r\n      \"name\": \"BB&T\",\r\n      \"url\": \"https://www.bbt.com/online-access/online-banking/default.page\",\r\n      \"logo_url\": \"https://sophtron.com/images/banklogos/bbt.png\"\r\n    },\r\n    {\r\n      \"id\": \"capital_one\",\r\n      \"name\": \"Capital One\",\r\n      \"url\": \"https://www.capitalone.com\",\r\n      \"logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/INS-acc3b72a-1165-9642-b41d-1e15f62d75fa_100x100.png\"\r\n    },\r\n    {\r\n      \"id\": \"3d7671e4-36be-4266-971e-b50d33001382\",\r\n      \"name\": \"Charles Schwab\",\r\n      \"url\": \"https://client.schwab.com/Login/SignOn/CustomerCenterLogin.aspx\",\r\n      \"logo_url\": \"https://sophtron.com/images/banklogos/charles%20schwab.png\"\r\n    },\r\n    {\r\n      \"id\": \"usaa-2\",\r\n      \"name\": \"USAA\",\r\n      \"url\": \"https://www.usaa.com/inet/ent_logon/Logon\",\r\n      \"logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/INS-d4dde375-895e-44b3-5380-fabdc4e10949_100x100.png\"\r\n    },\r\n    {\r\n      \"id\": \"68550\",\r\n      \"name\": \"Fifth Third Bank\",\r\n      \"url\": \"http://www.53.com/\",\r\n      \"logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/INS-3d76fbd8-bc2c-ef27-0f8a-d4d2493ddfe8_100x100.png\"\r\n    },\r\n    {\r\n      \"id\": \"0b82d0db-b63d-4827-8f5c-3b115af01aa3\",\r\n      \"name\": \"Goldman Sachs\",\r\n      \"url\": \"https://www.goldman.com/auth/login\",\r\n      \"logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/default_100x100.png\"\r\n    },\r\n    {\r\n      \"id\": \"c155dab2-9133-4df3-a28e-b862af43bb38\",\r\n      \"name\": \"HSBC Bank\",\r\n      \"url\": \"https://www.services.online-banking.us.hsbc.com/\",\r\n      \"logo_url\": \"https://sophtron.com/images/banklogos/hsbc%20bank.png\"\r\n    },\r\n    {\r\n      \"id\": \"69397\",\r\n      \"name\": \"Morgan Stanley\",\r\n      \"url\": \"https://www.morganstanleyclientserv.com\",\r\n      \"logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/INS-d80822f4-375e-90fc-fb69-038cf75a7c91_100x100.png\"\r\n    },\r\n    {\r\n      \"id\": \"pnc_bank\",\r\n      \"name\": \"PNC Bank\",\r\n      \"url\": \"http://www.pnc.com/\",\r\n      \"logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/INS-0be9a5aa-d127-c11e-145f-dc5618d97d6c_100x100.png\"\r\n    },\r\n    {\r\n      \"id\": \"86e1f8a0-5963-4125-9999-ccbe44d5940e\",\r\n      \"name\": \"State Street\",\r\n      \"url\": \"https://www.statestreetbank.com/online-banking\",\r\n      \"logo_url\": \"https://sophtron.com/images/banklogos/state%20street.png\"\r\n    },\r\n    {\r\n      \"id\": \"8275fc09-149b-4849-8a31-51ef9ba8eb6d\",\r\n      \"name\": \"SunTrust\",\r\n      \"url\": \"https://onlinebanking.suntrust.com/\",\r\n      \"logo_url\": \"https://logos-list.s3-us-west-2.amazonaws.com/suntrust_logo.png\"\r\n    },\r\n    {\r\n      \"id\": \"b8cb06e4-4f42-42b7-ba5a-623a5d1afe0f\",\r\n      \"name\": \"TD Bank\",\r\n      \"url\": \"https://onlinebanking.tdbank.com\",\r\n      \"logo_url\": \"https://logos-list.s3-us-west-2.amazonaws.com/td_bank_logo.png\"\r\n    },\r\n    {\r\n      \"id\": \"9aee59a1-59c9-4e5e-88f6-a00aa19f1612\",\r\n      \"name\": \"US Bank\",\r\n      \"url\": \"https://www.usbank.com/index.html\",\r\n      \"logo_url\": \"https://logos-list.s3-us-west-2.amazonaws.com/us_bank_logo.png\"\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://search.sophtron.com/api/preference",
+					"raw": "https://search.universalconnectproject.org/api/preference",
 					"protocol": "https",
 					"host": [
 						"search",
@@ -112,24 +102,18 @@
 					"path": [
 						"api",
 						"preference"
-					],
-					"query": [
-						{
-							"key": "partner",
-							"value": "money"
-						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "https://search.sophtron.com/api/institutions?query=pnc",
+			"name": "https://search.universalconnectproject.org/api/institutions?query=pnc",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://search.sophtron.com/api/institutions?query=pnc",
+					"raw": "https://search.universalconnectproject.org/api/institutions?query=pnc",
 					"protocol": "https",
 					"host": [
 						"search",
@@ -151,7 +135,7 @@
 			"response": []
 		},
 		{
-			"name": "https://search.sophtron.com/api/institution/resolve/auto?id=13793b9f-2ebf-4f31-815e-7dfe38e906c4&cache=true&partner=money",
+			"name": "https://search.universalconnectproject.org/api/institution/resolve/auto?id=13793b9f-2ebf-4f31-815e-7dfe38e906c4&cache=true",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -159,8 +143,6 @@
 						"exec": [
 							"const userId = '';\r",
 							"const accessKey = '';\r",
-							"const url = `${pm.request.url}`;\r",
-							"const httpMethod = pm.request.method;\r",
 							"function buildAuthCode() {\r",
 							"const authString = 'basic ' + Buffer.from(`${userId}:${accessKey}`).toString('base64')\r",
 							"return authString;\r",
@@ -179,7 +161,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://search.sophtron.com/api/institution/resolve/auto?id=13793b9f-2ebf-4f31-815e-7dfe38e906c4&cache=true&partner=money",
+					"raw": "https://search.universalconnectproject.org/api/institution/resolve/auto?id=13793b9f-2ebf-4f31-815e-7dfe38e906c4&cache=true",
 					"protocol": "https",
 					"host": [
 						"search",
@@ -200,10 +182,6 @@
 						{
 							"key": "cache",
 							"value": "true"
-						},
-						{
-							"key": "partner",
-							"value": "money"
 						}
 					]
 				}
